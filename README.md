@@ -25,6 +25,7 @@ This repository contains the full output of running the \*\*SakanaAI AI-Scientis
 \## Input Prompt
 
 The full research prompt provided by the instructor is documented in:
+
 \- `input/eli_lilly_prompt.txt`
 
 \- `idea.md`
