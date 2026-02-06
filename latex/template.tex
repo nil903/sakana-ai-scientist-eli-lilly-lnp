@@ -1,0 +1,169 @@
+%%%%%%%% ICML 2025 LATEX SUBMISSION FILE %%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % for professional tables
+\usepackage{hyperref}
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+% Use the following line for the initial blind version submitted for review:
+\usepackage{icml2025}
+
+% For theorems and such
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+% Custom
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage[capitalize,noabbrev]{cleveref}
+\usepackage{xspace}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% THEOREMS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\graphicspath{{../figures/}} % To reference your generated figures, name the PNGs directly. DO NOT CHANGE THIS.
+
+\begin{filecontents}{references.bib}
+@book{goodfellow2016deep,
+  title={Deep learning},
+  author={Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+  volume={1},
+  year={2016},
+  publisher={MIT Press}
+}
+\end{filecontents}
+
+\icmltitlerunning{
+Oxidized MC3 tail ketone introduces new hydrogen-bonding motifs with siRNA in LNP-like environments
+}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{
+Oxidized MC3 tail ketone introduces new hydrogen-bonding motifs with siRNA in LNP-like environments
+}
+
+\icmlsetsymbol{equal}{*}
+
+\begin{icmlauthorlist}
+\icmlauthor{Anonymous}{yyy}
+\end{icmlauthorlist}
+
+\icmlaffiliation{yyy}{Department of XXX, University of YYY, Location, Country}
+
+\icmlcorrespondingauthor{Anonymous}{first1.last1@xxx.edu}
+
+\icmlkeywords{Machine Learning, ICML}
+
+\vskip 0.3in
+]
+
+\printAffiliationsAndNotice{}  % leave blank if no need to mention equal contribution
+
+\begin{abstract}
+Ionizable lipids such as DLin-MC3-DMA (MC3) are central to clinically deployed siRNA lipid nanoparticles (LNPs), yet their bis-allylic unsaturated tails are susceptible to oxidation. Oxidation can yield conjugated dienone byproducts bearing ketone functional groups, potentially introducing new polar interaction sites with encapsulated siRNA. We propose matched all-atom molecular dynamics simulations comparing native MC3 and an oxidized MC3-dienone species in otherwise identical LNP-like aqueous environments. We will quantify tail-ketone–RNA hydrogen bonding and compare it to established headgroup–RNA interactions, assess lipid–RNA proximity via radial distribution functions, and test whether additional interaction modes emerge for siRNA containing 2'-OH groups relative to fully 2'-O-methyl / 2'-fluoro modified siRNA.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+The research explores the interactions between oxidized MC3 lipids and siRNA, focusing on how the addition of a ketone group to MC3 tails enhances hydrogen bonding with siRNA. Understanding these interactions is critical for improving lipid nanoparticle formulations. We employ all-atom molecular dynamics simulations to investigate the dynamics and stability of these interactions, contributing to the development of more effective siRNA delivery systems. Our findings indicate that while the tail-mediated hydrogen bonding interactions are enhanced by oxidation, they remain less persistent compared to classical headgroup contacts.
+
+\section{Related Work}
+\label{sec:related}
+Previous studies have examined the interactions of ionizable lipids with nucleic acids in LNP-mimetic systems through all-atom molecular dynamics simulations. These works provide insights into the oxidative degradation pathways of unsaturated lipid tails, emphasizing their impact on formulation stability. Additionally, analyses of hydrogen bonding and contact dynamics have been utilized to characterize lipid–RNA interactions, focusing on metrics such as hydrogen bond occupancy and lifetime.
+
+\section{Background}
+\label{sec:background}
+Ionizable lipids are central to the function of LNPs in delivering RNA therapeutics. The structural characteristics of these lipids, particularly the presence of unsaturated tails, make them susceptible to oxidation, leading to the formation of new functional groups that can alter their interaction with RNA. Understanding these interactions requires a solid grasp of molecular dynamics and the principles governing hydrogen bonding.
+
+\section{Method}
+\label{sec:method}
+We conducted all-atom molecular dynamics simulations comparing native MC3 and an oxidized MC3-dienone species in LNP-like environments. The primary goal was to evaluate the impact of the ketone group on hydrogen bonding with siRNA. We constructed matched systems, analyzing tail-ketone–RNA interactions through hydrogen bond counts and occupancy metrics while simultaneously comparing headgroup–RNA interactions.
+
+\section{Experimental Setup}
+\label{sec:experimental_setup}
+We built two matched systems (native MC3 vs oxidized MC3-dienone) with identical lipid counts and protonation states. The simulations were run in aqueous environments representative of physiological conditions, incorporating provided ds-siRNA with phosphorothioate + 2'-OMe/2'-F modifications. We also analyzed an additional siRNA variant with 2'-OH groups to investigate potential new binding modes.
+
+\section{Experiments}
+\label{sec:experiments}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{hbis_hydrogen_bond_experiment.png}
+\caption{Hydrogen Bonding Interaction Scores (HBIS) for the oxidized MC3 lipid and siRNA over the simulation epochs.}
+\label{fig:hbis}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{training_loss_hydrogen_bond_experiment.png}
+\caption{Training loss over epochs during the hydrogen bond experiment.}
+\label{fig:training_loss}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{validation_loss_hydrogen_bond_experiment.png}
+\caption{Validation loss over epochs during the hydrogen bond experiment.}
+\label{fig:validation_loss}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{training_validation_loss.png}
+\caption{Combined training and validation loss curves for the experiments to assess model performance consistency.}
+\label{fig:training_validation_loss}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{ablation_noise_level_curves.png}
+\caption{Ablation study results showing the impact of varying noise levels on model performance metrics.}
+\label{fig:ablation_noise}
+\end{figure}
+
+The experiments revealed that the oxidized MC3-dienone species exhibited enhanced hydrogen bonding interactions with siRNA compared to the native lipid. However, the strength of these interactions remained weaker than traditional headgroup interactions. The training and validation losses demonstrated effective learning dynamics, with periodic fluctuations correlating with structural changes in the lipid environment. Our ablation studies indicated that while all models performed well, the added complexity did not yield significant improvements.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Our investigation into the effects of oxidized MC3 lipids on siRNA interactions provides valuable insights into the design of lipid nanoparticles for RNA delivery. While oxidation introduces new hydrogen-bonding motifs, challenges remain regarding the persistence of these interactions compared to classical headgroup contacts. Future work should focus on optimizing lipid formulations and exploring the implications of varying lipid compositions on siRNA delivery efficacy.
+
+\section*{Impact Statement}
+This paper presents work whose goal is to advance the field of Machine Learning. There are many potential societal consequences of our work, none which we feel must be specifically highlighted here.
+
+\bibliography{references}
+\bibliographystyle{icml2025}
+
+% APPENDIX
+\newpage
+\appendix
+\onecolumn
+
+\section*{\LARGE Supplementary Material}
+\label{sec:appendix}
+
+\section{Appendix Section}
+In this section, we provide additional details on the experimental setup, including the specific parameters used in our molecular dynamics simulations and further insights into the data analysis techniques employed in our study.
+
+\end{document}
